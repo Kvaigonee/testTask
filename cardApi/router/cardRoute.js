@@ -5,7 +5,6 @@ const router = new Router();
 router.post("/addCard", async (req, res) => {
 	try {
 		const { Amount, CardNumber, ExpDate, Cvv } = req.body;
-		console.log(req.header);
 
 		const card = new Card({ CardNumber, ExpDate, Cvv, Amount });
 		await card.save();
